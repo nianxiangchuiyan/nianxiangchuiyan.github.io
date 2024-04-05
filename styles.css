@@ -1,0 +1,569 @@
+/*part 1*/ 
+.image-container{
+    position:relative;
+    width:1575px;
+    height:300px;
+    overflow:hidden;/*如果其他内容超出容器的范围 会采取的措施 例如：visible超出也可见 scroll显示滚动条 */
+    }
+    
+    #advertisement1{
+    animation:slideAndFadeOut  forwards;
+    animation-duration: 15s;
+    z-index: -1;
+    
+    }
+    @keyframes slideAndFadeOut{
+    0%{opacity:1; transform:translateY(0);}
+    80%{transform:translateY(0);}
+    100% {opacity:1; transform:translateY(100%);}
+    }
+    
+    #ad1{
+    position:absolute;
+    width:1577px;
+    height:300px;
+    }
+    
+    .greeting1{
+        position:absolute;
+        opacity:0;
+        content:"PIHA WELCOME YOU";
+        animation-name:greeting1Move;
+        animation-duration:8s;
+        animation-delay: 3s;
+        animation-iteration-count:infinite;
+        }
+        @keyframes greeting1Move{
+        0%{opacity:1;color:lightblue; font-size:20px; left:100px; top:2px;}
+        25%{opacity:1;color:blue; font-size:40px; left:1330px; top:2px;}
+        50%{opacity:1;color:blueviolet; font-size:20px; left:1400px; top:258px;}
+        75%{opacity:1;color:brown; font-size:40px; left:100px; top:258px;}
+        100%{opacity:0;color:red; font-size:20px; left:100px; top:5px;}
+    }
+    .greeting2::after{
+    font-size:50px;
+    content:"Book";
+    visibility:hidden;
+    color:yellow;
+    position:absolute;
+    right:700px;
+    top:100px;
+    animation-name:greeting2Move;
+    animation-duration:3s;
+    animation-iteration-count:infinite;
+    animation-delay: 3s;
+    }
+    @keyframes greeting2Move{
+    0%{visibility:visible; color:yellow;font-size:100px;transform:rotate(0deg);}
+    25%{content:"Room"; visibility:visible; color:yellow;font-size:100px;transform:rotate(90deg);}
+    60%{content:"Today";visibility:visible; color:orange;font-size:100px;transform:rotate(230deg);}
+    100%{visibility:visible; color:orange;font-size:100px;transform:rotate(360deg);}
+    }
+    
+    .greeting3::after{
+        font-size:50px;
+        content:"Book";
+        visibility:hidden;
+        color:yellow;
+        position:absolute;
+        right:700px;
+        top:100px;
+        animation-name:greeting3Move;
+        animation-duration:3s;
+        animation-iteration-count:infinite;
+        animation-delay: 3s;
+        }
+        @keyframes greeting3Move{
+        0%{visibility:visible; color:yellow;font-size:100px;transform:rotate(0deg);}
+        25%{content:"Room"; visibility:visible; color:yellow;font-size:100px;transform:rotate(90deg);}
+        60%{content:"Today";visibility:visible; color:orange;font-size:100px;transform:rotate(230deg);}
+        100%{visibility:visible; color:orange;font-size:100px;transform:rotate(360deg);}
+        }
+        .greeting4::after{
+            position:absolute;
+            opacity:0;
+            content:"PIHA WELCOME YOU";
+            animation-name:greeting4Move;
+            animation-duration:8s;
+            animation-delay: 13.5s;
+            animation-iteration-count:infinite;
+            }
+            @keyframes greeting4Move{
+            0%{opacity:1;color:red; font-size:20px; left:100px; top:2px;}
+            25%{opacity:1;color:orange; font-size:40px; left:1330px; top:2px;}
+            50%{opacity:1;color:yellow; font-size:20px; left:1400px; top:258px;}
+            75%{opacity:1;color:lightgreen; font-size:40px; left:100px; top:258px;}
+            100%{opacity:0;color:green; font-size:20px; left:100px; top:5px;}
+            }
+    
+    #ad2{
+    width:1577px;
+    height:300px;
+    position:absolute;
+    background-size:100% 100%;
+    right:-100%;
+    animation:slideAndFadeIn 15s forwards;
+    animation-delay: 15s;
+    }
+    @keyframes slideAndFadeIn{
+    0%{
+    right:-100%;
+    }
+    10%{
+    right:0%;
+    }
+    99%{
+        right: 0%;
+    }
+    100%{
+        right: -100%;
+    }
+    }
+    
+    
+        #p:after{
+            content:"Jiacheng Zhao ID:1572730";
+            border: 2px solid black;
+            font-size:20px;
+            color:black;
+            background-color: brown;
+            position:absolute;
+            right:500px;
+            top:230px;
+            animation:name 5s 22s ease-in-out;/*ease-in-out 慢快慢快慢 ease动画开始慢中间加速后面慢 ease-in开始慢 逐渐加速 末尾最快 ease-out和ease-in相反 linear动画匀速运动*/
+            animation-fill-mode: backwards;
+        }
+    @keyframes name{
+        0% {
+            transform: scale(15);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
+    }
+    
+    
+    
+    /*part 2*/
+    
+    .part2 {
+        position: absolute;
+        left:1294px;
+        top:360px;
+        width: 300px;
+        height: 680px;
+        overflow: hidden;
+    }
+    
+    #part2i1{
+        position:absolute;
+        overflow:hidden;
+        width:600px;
+        height: 680px;
+        animation:part2Image1 3s linear,
+                    yidong 10s linear,
+                    xiaoshi 1s 11s linear;
+        animation-fill-mode:forwards;
+    }
+
+    
+    .p2i1t1, .p2i1t2, .p2i2t1, .p2i3t1, .p2i4t1,.p2i4t2,.p2i4t3{
+        position: relative;
+        top:50%;/*1*/
+        left:20%;/*2*/
+        transform:translate(-50%);/*3 above three lines of code can make the word in center*/
+        color: white;
+        font-size: 35px;
+        -webkit-text-stroke: 2px black; 
+        font-family: "Comic Sans MS";
+        opacity: 0;
+  
+    }
+    
+    .p2i1t1{
+        top:100px;
+        animation:chuxian 1s 1000ms,
+                xiaoshi 1600ms 11s,
+                yidong  1s 1 reverse;
+        animation-fill-mode:forwards;
+        left: 80px;
+    }
+    
+    .p2i1t2 {
+        top: 115px;
+        opacity:0;
+        animation: chuxian 1s 1800ms,
+                   xiaoshi 1600ms 11s,
+                   yidong  1s 1 reverse;
+        animation-fill-mode: forwards;
+        left: 60px;
+    }
+    #part2i2{
+        position:absolute;
+        width:600px;
+        height:680px;
+        opacity:0;
+        animation:chuxian 1s 11.5s linear,
+                  chuxianxiaoguo1 10s 11s linear,
+                  xiaoshi 1s 22s linear;
+                  animation-fill-mode:forwards;
+    }
+
+
+
+    .p2i2t1 {
+        top: 150px;
+        opacity: 0;
+        animation: chuxian 1s 11s,
+                   xiaoshi 1600ms 22s;
+        animation-fill-mode: forwards;
+        left: 250px;
+    }
+
+    #part2i3{
+        position:absolute;
+        width:600px;
+        height:680px;
+        opacity:0;
+        animation:chuxian 1s 23s linear,
+                  chuxianxiaoguo1 10s 23s linear,
+                  xiaoshi 1s 33s linear;
+                  animation-fill-mode:forwards;
+    }
+    .p2i3t1 {
+        top: 150px;
+        left: 170px;
+        animation: chuxian 1s 23s,
+                   xiaoshi 1600ms 33s;
+        animation-fill-mode: forwards;
+    }
+    #part2i4{
+        position:absolute;
+        width:600px;
+        height:680px;
+        opacity:0;
+        animation:chuxian 1s 33s linear,
+                  chuxianxiaoguo1 10s 33s linear;
+
+                  animation-fill-mode:forwards;
+    }
+    .p2i4t1 {
+        top: 70px;
+        left: 170px;
+        animation: chuxian 1s 33s;
+        animation-fill-mode: forwards;
+    }
+    .p2i4t2 {
+        top: 85px;
+        left: 170px;
+        animation: chuxian 1s 33s;
+        animation-fill-mode: forwards;
+    }
+    .p2i4t3 {
+        top: 100px;
+        left: 170px;
+        animation: chuxian 1s 33s;
+        animation-fill-mode: forwards;
+    }
+    @keyframes chuxian {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    }
+    
+    @keyframes xiaoshi{
+        100%{
+            opacity:0;
+        }
+    }
+    
+    @keyframes part2Image1{
+        0% { visibility:visible; clip-path: circle(10px) }
+        100% { clip-path: circle(100%) }
+    }
+    
+
+    @keyframes chuxianxiaoguo1{
+        0% {
+            transform: translateX(0); /* 初始位置，左半部分可见 */
+        }
+        100% {
+            transform: translateX(-50%); /* 25% 的时候移动到中间 */
+        }
+        
+    }
+    
+
+    @keyframes yidong {
+        0% {
+            transform: translateX(0); /* 初始位置，左半部分可见 */
+        }
+        100% {
+            transform: translateX(-50%); /* 25% 的时候移动到中间 */
+        }
+        
+    }
+    
+    @keyframes enterFromTopRight{
+        0%{
+            opacity:0;
+            transform:translateX(100%);
+          }
+        100%{
+            opacity:1;
+            transform:translateX(0);
+        }	
+    }
+    
+    #rebu{
+        width:100%;
+        height:100%;
+    }
+    .reButton{
+        position:absolute;
+        left: 5px;
+        top: 5px;
+        width: 24px;
+        height: 24px;
+        opacity:0;
+        animation:showshow 4s 26s linear;
+        animation-fill-mode:forwards;
+        transition: all 0.5s ease-in-out;
+    
+    }
+    @keyframes showshow{
+        100%{
+            opacity:1;
+        }
+    }
+       
+    .name:after{
+        content:"Jiacheng Zhao ID:1572730";
+        border: 2px solid black;
+        font-size:10px;
+        color:black;
+        background-color: brown;
+        position:absolute;
+        right:200px;
+        top:530px;
+        animation:name 5s 44s ease-in-out;/*ease-in-out 慢快慢快慢 ease动画开始慢中间加速后面慢 ease-in开始慢 逐渐加速 末尾最快 ease-out和ease-in相反 linear动画匀速运动*/
+        animation-fill-mode: backwards;
+    }
+@keyframes name{
+    0% {
+        transform: scale(15);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+    .reButton:hover {
+        transform: rotate(360deg) scale(1.4);
+    }
+    
+    .notice1{
+      visibility:hidden;
+      position: absolute;
+      background-color: #333;
+      color: #fff;
+      padding: 5px;
+      border-radius: 3px;
+      font-size: 14px;
+      z-index: 1;
+      top: 10px;
+      left: 10px;
+    }
+    
+    .reButton:hover .notice1{
+      visibility:visible;
+    }
+    
+    /* part 2 end */
+    
+    /* part 3 start*/
+    .part3 {
+        position: abosolute;
+        right:1px;
+        top:30px;
+        width: 1500px;
+        height: 680px; /* 640*/
+        overflow: hidden;
+    }
+    
+    /* Style the tab */
+    .tab {
+      border: 1px solid #ccc;
+      background-color: #f1f1f1;
+    }
+    
+    /* Style the buttons inside the tab */
+    .tab button {
+      background-color: lightblue;
+      float: left;
+      border: none;
+      outline: none;
+      cursor: pointer;
+      padding: 14px 16px;
+      transition: 0.3s;
+      font-size: 17px;
+    }
+    /* Change background color of buttons on hover */
+    .tab button:hover {
+      background-color: white;
+      border-bottom: 3px solid red;
+    }
+    
+    /* Create an active/current tablink class */
+    .tab button.active {
+      background-color: #ccc;
+    }
+    
+    .part3content {
+            position: absolute;
+            margin-top: 50px;
+            width: 1280px;
+            height: 680px;
+            background-color: rgb(224, 236, 240);
+            border: black solid 2px;
+            border-radius: 10px;
+            box-shadow: 5px 5px 5px rgba(247, 118, 144, 0.61);
+        }
+    
+    #bookForm{
+        text-align:center;
+    }
+    
+    .box{
+        width: 500px;
+        height: 20px; 
+        padding: 10px; 
+    }
+    
+    #nextButton{
+        position:absolute;
+        right:250px;
+        bottom:50px;
+        background-color: lightgrey;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+    
+    #previousButton{
+        position:absolute;
+        right:220px;
+        bottom:50px;
+        background-color: lightgrey;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+    
+    #thirdPageButton{
+        position:absolute;
+        right:250px;
+        bottom:50px;
+        background-color: lightgrey;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+    
+    #fourthPageButton{
+        position:absolute;
+        right:250px;
+        bottom:50px;
+        background-color: lightgrey;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+    
+    #showAllButton{
+        position:absolute;
+        right:250px;
+        bottom:50px;
+        background-color: lightgrey;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+    
+    #previousButton1{
+        position:absolute;
+        right:120px;
+        bottom:50px;
+        background-color: lightgrey;
+        color: black;
+        border: none;
+        padding: 10px 20px;
+        font-size: 17px;
+        font-family: Raleway;
+        cursor: pointer;
+    }
+    
+    #fourthPage{
+        text-align:center;
+    }
+    
+    .grid-item{
+        padding: 5px;
+        text-align:left;
+        margin:10px;
+    }
+    
+    .grid-3{
+        display:grid;
+        grid-template-columns: auto auto auto;
+        padding:5px;
+        margin:10px;
+    }
+    
+    #close{
+        position:absolute;
+        top:50px;
+        right:50px;
+    }
+    
+    .progress{
+        position:absolute;
+        height:20px;
+        width:518px;
+        bottom:1px;
+        right:380px;
+        border:1px solid black;
+    }
+    
+    .progress-bar{
+        height:20px;
+        background-color: rgb(60, 240, 60);
+        border:1px solid;
+    }
+    
+    .weizhi{
+        position:absolute;
+        bottom:5px;
+        right:920px;
+    }

@@ -1,0 +1,206 @@
+<!doctype html>
+<html>
+<head>
+<title>piha</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="./styles.css" rel="stylesheet" />
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+<script src="myScript.js"></script>
+<div class="image-container">
+<div id="advertisement1"><a href="http://www.piha.co.nz/" target="_blank"><img src="image2.jpg" id="ad1" alt="advertisement" title=" "></a>
+<div class="greeting1">PIHA WELCOME YOU</div>
+<div class="greeting2"></div>
+<div class="piha1"></div>
+</div>
+<div id="advertisement2"><a href="http://www.piha.co.nz/" target="_blank"><img src="image1.jpg" id="ad2" alt="advertisement"title=" "></a>
+<div class="greeting4">PIHA WELCOME YOU</div>
+<div class="greeting3"></div>
+<div class="piha2"></div>
+<div id="p"></div>
+</div>
+</div>
+<div class="part2" id="reloadPart2" >
+<div class="part2Image1"><img src="part2-image1.jpg" alt="Part 2 Image1" id="part2i1">
+<div class="p2i1t1">Creat Your</div>
+<div class="p2i1t2">dream kitchen</div>
+</div>
+<div class="part2Image2"><img src="part2-image2.jpg" alt="Part2 Image2" id="part2i2">
+<div class="p2i2t1">On trend</div>
+</div>
+<div class="part2Image3"><img src="part2-image3.jpg" alt="Part2 Image3" id="part2i3">
+    <div class="p2i3t1"><br>And on bugget</div>
+</div>
+    <div class="part2Image4"><img src="part2-image4.jpg" alt="Part2 Image4" id="part2i4">
+    <div class="p2i4t1"><br>Explore Our</div>
+    <div class="p2i4t2"><br>kitchen </div>
+    <div class="p2i4t3"><br>range </div>
+</div>
+<div class="name">Jiacheng Zhao ID:1572730</div>
+<div class="reButton"><img src="refresh-button.png" alt="refresh button" id="rebu" onclick="refreshTheAd()"><div class="notice1">Refresh the Page</div></div>
+</div>
+</div>
+<div class="part3">
+  <div class="tab">
+    <a href="Storyboard1.pdf" target="_blank">
+      <button class="tablinks" id="button1" onclick="openSrotyBoard1(event, 'Storyboard1')">StoryBoard1</button>
+    </a>
+    <a href="Storyboard2.pdf" target="_blank">
+    <button class="tablinks" id="button2" onclick="openSrotyBoard2(event, 'StoryBoard2')">StoryBoard2</button>
+    </a>
+    <a href="Storyboard3.pdf" target="_blank">
+    <button class="tablinks" id="button3" onclick="openSrotyBoard3(event, 'StoryBoard3')">StoryBoard3</button>
+    </a>
+  </div>
+ <div class="part3content">
+ <form id="bookForm">
+ <div id="firstPage">
+ <h1 style="text-align:center">SELECT YOUR DATE</h1><!-- Page 1-->
+ <h3>Check in Date: </h3>
+ <input type="date" class="box" id="checkindate" name="checkInDate">
+ <h3>Check Out Date: </h3>
+ <input type="date" class="box" id="checkoutdate" name="checkOutDate">
+ <h3>Number Of Adults</h3>
+ <input type="number" class="box" id="adultsNumber"name="numberOfAdults" min="0"><!-- placeholder = 0 框框里的显示就是0 设置min=“0” 就不可以改成-1 也可以用max-->
+ <h3>Number Of Children</h3>
+ <input type="number" class="box" id="childrenNumber" name="numberOfChildren" min="0">
+ <label for="rooms"><h3>Number of Rooms:</h3></label>
+ <select id="rooms" name="rooms">
+ <option value="one room">One Room</option>
+ <option value="two rooms">Two Rooms</option>
+ <option value="three rooms">Three Rooms</option>
+ <option value="four rooms">Four Rooms</option>
+ <option value="five rooms">Five Rooms</option>
+ </select>
+ <button type="button" id="nextButton" onclick="goToSecondPage()">Next</button>
+ <div class="weizhi" style="color:red ; font-weight: bold;">Your progress:</div>
+ <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%">0%
+  </div>
+</div>
+ </div><!-- Page 2-->
+ <div id="secondPage" style="display:none">
+ <h1 style="text-align:center">CHOOSE YOUR ROOM</h1>
+ <h3>ROOM TYPE</h3>
+ <label class="contain" id="deluxeQueenStudio" name="deluxeQueenStudio">Deluxe Queen Studio <input type="radio" checked="checked" name="radio1" id="chooseRoomType1"><!-- checked means Button initialization will stop here -->
+ <span class="checkmark"></span></label>
+ <label class="contain" id="deluxeKingSpa" name="deluxeKingSpa">Deluxe King SPA<input type="radio" name="radio1" id="chooseRoomType2">
+ <span class="checkmark"></span></label>
+ <label class="contain" id="deluxeTwinStudio" name="deluxeTwinStudio">Deluxe Twin Studio<input type="radio" name="radio1" id="chooseRoomType3">
+ <span class="checkmark"></span></label>
+ <label class="contain" id="executiveStudio" name="executiveStudio">Executive Studio<input type="radio" name="radio1" id="chooseRoomType4">
+ <span class="checkmark"></span></label>
+ <h3>Do You Smoke?</h3>
+ <label class="contain" id="smokeYes">YES<input type="radio" checked="checked" name="radio2" id="smokecheck1"></label>
+ <label class="contain" id="smokeNo">NO<input type="radio" name="radio2" id="smokecheck2">
+ <span class="checkmark"></span></label>
+ <h3>Do You Agree With The Local Native Conservation Initiative Agreement?</h3>
+ <label class="contain" id="localYes">YES<input type="radio" checked="checked" name="radio3" id="localCheck1"></label>
+ <label class="contain" id="localNo">NO<input type="radio" name="radio3" id="localCheck2"></label>
+ <h3>Do You Need Kitchen With Cooking Facilities?</h3>
+ <label class="contain" id="kitchenYes">YES<input type="radio" checked="checked" name="radio4" id="kitchenCheck1"></label>
+ <label class="contain" id="kitchenNo">NO<input type="radio" name="radio4" id="kitchenCheck2">
+ <span class="checkmark"></span></label>
+ <h3>Do You Want To Have Inter Connecting Rooms For Families?</h3>
+ <label class="contain" id="connectingYes">YES<input type="radio" checked="checked" name="radio5" id="connectingCheck1"></label>
+ <label class="contain" id="connectingNo">NO<input type="radio" name="radio5" id="connectingCheck2"></label>
+ <button type="button" id="thirdPageButton" onclick="showThirdPage()">Next</button>
+ <button type="button" id="previousButton1" onclick="PreviousShowFirstPage()">Previous</button>
+ <div class="weizhi" style="color:red ; font-weight: bold;">Your progress:</div>
+ <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width:25%">25%
+  </div>
+</div>
+ </div>
+ 
+ <div id="thirdPage" style="display:none">
+ <h1 style="text-align:center">SELECT YOUR EQUIPMENTS</h1>
+ <div class="grid-3">
+ <span class="grid-item" style="font-weight:bold ; font-size:20px">Item</span>
+ <span class="grid-item" style="font-weight:bold ; font-size:20px">Quantity</span>
+ <span class="grid-item" style="font-weight:bold ; font-size:20px">Color</span>
+
+ <span class="grid-item">Swimming Goggles</span>
+ <span class="grid-item"><label for="0" id="swimmingGogglesNumber">0</label><input type="range" name="0" id="swimminggogglesnum" min="0" max="5" value="0" onChange="myChange()"></span>
+  <span class="grid-item"><label for="color"></label><input type="color" name="color" id="swimmingGogglesColor"></span>
+    <span class="grid-item"> Surf Boards</span>
+    <span class="grid-item"><label for="0" id="surfBoardsNumber">0</label><input type="range" name="0" id="surfboardsnum" min="0" max="5" value="0" onChange="myChange()"></span>
+      <span class="grid-item"><label for="corlor"></label><input type="color" name="color" id="surfBoardColor"></span>
+        <span class="grid-item">Swimming Ring</span>
+        <span class="grid-item"><label for="0" id="swimmingRingNumber">0</label><input type="range" name="0" id="swimmingringnum" min="0" max="5" value="0" onChange="myChange()"></span>
+        <span class="grid-item"><label for="color"></label><input type="color" name="color" id="swimmingRingColor"></span>
+        <span class="grid-item">Wheelchair</span>
+        <span class="grid-item"><label for="0" id="wheelChairNumber">0</label><input type="range" name="0" id="wheelchairnum" min="0" max="3" value="0" onChange="myChange()"></span>
+        <span class="grid-item"></span>
+        <span class="grid-item">Power Adapter</span>
+        <span class="grid-item"><label for="0" id="powerAdapterNumber">0</label><input type="range" name="0" id="poweradapternum" min="0" max="2" value="0" onChange="myChange()"></span>
+      </div>
+          <button type="button" id="fourthPageButton" onclick="showFourthPage()">Next</button>
+ <button type="button" id="previousButton1" onclick="PreviousShowSecondPage()">Previous</button>
+ <div class="weizhi" style="color:red ; font-weight: bold;">Your progress:</div>
+ <div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width:50%">50%
+  </div>
+</div>
+        </div>
+
+        <div id="fourthPage" style="display:none">
+            <h1 style="text-align: center">WRITE YOUR PERSONAL INFORMATION</h1>
+            <h3><label for="firstName">First Name:</label></h3>
+            <p><input type="firstName" class="box" id="firstName" name="firstName"></p>
+            <h3><label for="lastName">Last Name:</label></h3>
+            <p><input type="lastName" class="box" id="lastName" name="lastName"></p>
+            <h3><label for="age">Age:</label></h3>
+            <p><input type="age" class="box" id="age" name="age"></p>
+            <h3><label for="emailAddress">Email Address:</label></h3>
+            <p><input type="email" class="box" id="emailAddress" name="emailAddress"></p>
+            <h3><label for="phoneNumber">Phone Number:</label></h3>
+            <p><input type="phoneNumber" class="box" id="phoneNumber" name="phoneNumber"></p>
+            <button type="button" id="showAllButton" onclick="showAllInfo()">Submit</button>
+            <button type="button" id="previousButton1" onclick="PreviousShowThirdPage()">Previous</button>
+            <div class="weizhi" style="color:red ; font-weight: bold;">Your progress:</div>
+            <div class="progress">
+              <div class="progress-bar" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width:75%">75%
+              </div>
+            </div>
+            </div>
+
+ <div id="lastPage" style="display:none">
+  <h1 style="text-align:center">YOUR DETAILS LIST</h1>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">First Name:<label id="listFirstName" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Last Name:<label id="listLastName" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Age:<label id="listAge" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Email Address:<label id="listEmailAddress" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Phone Number:<label id="listPhoneNumber" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Check-in Date:<label id="listCheckInDate" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Check-out Date:<label id="listCheckOutDate" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Number of Adults:<label id="listNumberOfAdults" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Number of Children:<label id="listNumberOfChildren" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Number of Room:<label id="listNumberOfRoom" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Room Type:<label id="listRoomType" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Do You Smoke?<label id="listSmoke" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Do You Agree With The Local Native Conservation Initiative Agreement?<label id="listlocal" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Do You Need Kitchen with Cooking Facilities?<label id="listKitchen" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Do You Want to Have Inter Connecting Rooms for the Families?<label id="listConnectingRoom" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Swimming Goggles:<label id="listSwimmingGoggles"></label><label id="listSwimmingGogglesColor" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Surf Boards:<label id="listSurfBoards"></label><label id="listSurfBoardsColor" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Swimming Ring:<label id="listSwimmingRing"></label><label id="listSwimmingRingColor" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Wheel Chair:<label id="listWheelChair" style="font-size:15px; color: red;"></label></p>
+    <p style="text-align:center ; font-size:13px; font-weight:bold;">Power Adapter:<label id="listPowerAdapter" style="font-size:15px; color: red;"></label></p>
+<button type="button" id="close" onclick="redo()">X</button>
+<div class="weizhi" style="color:red ; font-weight: bold;">Your progress:</div>
+<div class="progress">
+  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width:100%">100%
+  </div>
+</div>
+</form>
+ </div>
+</div>
+ </div>
+</body>
+</html>
